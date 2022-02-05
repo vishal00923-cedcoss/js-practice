@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Area and Paremeter Calculator</title>
+  </head>
+  <body class="flex-container">
+    <div id="wrapper">
+      <div id="form-container">
+        <label for="length" class="sub-container">
+          <span>Length Of Rectangle</span>
+
+          <input type="text" class="input-text" id="length" />
+        </label>
+
+        <label for="width" class="sub-container">
+          <span>Width Of Rectangle</span>
+
+          <input type="text" class="input-text" id="width" />
+        </label>
+
+        <button id="btn">Calculate Area & Perimeter</button>
+      </div>
+
+      <div id="area"></div>
+
+      <div id="paremeter"></div>
+    </div>
+  </body>
+
+  <script>
+    const btn = document.getElementById("btn");
+
+    function calc() {
+      const length = Number(document.getElementById("length").value);
+      const width = Number(document.getElementById("width").value);
+
+      const area = length * width;
+      const paremeter = 2 * (length + width);
+
+      document.getElementById("area").innerHTML = `Area is ${area} sq. mtr`;
+
+      document.getElementById("paremeter").innerHTML = `Paremeter is ${paremeter} mtr`;
+    }
+
+    btn.addEventListener("click", calc);
+  </script>
+</html>
